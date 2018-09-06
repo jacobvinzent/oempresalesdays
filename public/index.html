@@ -1,0 +1,29 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            function getnextval(){
+            var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "http://localhost:3000/addonetofile",
+                    "method": "GET",
+                    "headers": {
+                        "content-type": "application/json",
+                        "cache-control": "no-cache",
+                        "postman-token": "3ec6c8ae-6f73-a8ed-cbf6-6678470101dc"
+                    }
+                }
+            
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  $( "#next" ).text(response);
+});
+}
+</script>
+    </head>
+    <h1>Hello I'm here</h1>
+    <label>current count: </label><label id="next"></label><br>
+    <button onclick="getnextval()">get next value</button>
+</html>
